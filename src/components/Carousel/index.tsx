@@ -23,13 +23,13 @@ export const Carousel = () => {
     fetchProducts();
   }, []);
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-  //   }, 5000);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 5000);
 
-  //   return () => clearInterval(interval);
-  // }, [images]);
+    return () => clearInterval(interval);
+  }, [images]);
 
   const nextImage = () => {
     // const newIndex = ImageIndex >= images.length - 1 ? 0 : ImageIndex + 1;
@@ -46,7 +46,6 @@ export const Carousel = () => {
       return index - 1;
     });
   };
-  console.log('image>>>>', images);
 
   return (
     <div className="carousel">
@@ -62,6 +61,15 @@ export const Carousel = () => {
             src={`${cloudinaryPath}/${image.imgPath}`}
             alt="carousel_images"
           />
+        ))}
+      </div>
+      <div className="carousel__track-dot-container">
+        {images.map((_, index) => (
+          <button
+            className={`carousel__track-dot 
+              ${ImageIndex === index ? 'carousel__track-dot--active' : null}`}
+            key={index}
+            onClick={() => setImageIndex(index)}></button>
         ))}
       </div>
 

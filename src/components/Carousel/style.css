@@ -57,7 +57,7 @@
 .carousel:hover .arrow-icon {
   opacity: 1;
 }
-/* .track-dot-container {
+.carousel__track-dot-container {
   position: absolute;
   bottom: 10px;
   left: 50%;
@@ -66,19 +66,21 @@
   justify-content: center;
 }
 
-.track-dot {
-  height: 10px;
-  width: 10px;
-  background-color: #ffffff;
+.carousel__track-dot {
+  height: 1em;
+  width: 1em;
+  background-color: #717171;
   border-radius: 50%;
+  border: solid 2px #717171;
   margin: 0 2px;
+  cursor: pointer;
 }
 
-.track-dot.active {
-  background-color: #717171;
-} */
+.carousel__track-dot--active {
+  background-color: white;
+}
 
-@media only screen and (max-width: 600px) {
+/* @media only screen and (max-width: 600px) {
   .carousel_image {
     max-height: 300px;
   }
@@ -88,4 +90,4 @@
   .carousel_image {
     max-height: 200px;
   }
-}
+} */
