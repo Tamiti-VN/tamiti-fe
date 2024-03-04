@@ -67,7 +67,7 @@ export const Carousel = () => {
         {images.map((_, index) => (
           <button
             className={`carousel__track-dot 
-              ${ImageIndex === index ? 'carousel__track-dot--active' : null}`}
+              ${ImageIndex === index ? 'carousel__track-dot--active' : ''}`}
             key={index}
             onClick={() => setImageIndex(index)}></button>
         ))}

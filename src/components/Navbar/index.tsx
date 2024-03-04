@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { FiMenu } from 'react-icons/fi';
 import { FiX } from 'react-icons/fi';
 
-import style from './Navbar.module.css';
+import './style.css';
 
 type Cake = {
   type: string;
@@ -36,23 +36,23 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className={style.navbar}>
-      <div onClick={toggleMenu} className={style.hamburger}>
+    <nav className="navbar">
+      <div onClick={toggleMenu} className="navbar__hamburger">
         {isOpen ? <FiX size={26} /> : <FiMenu size={26} />}
       </div>
 
-      <div className={style.logo}>
+      <div className="navbar__logo">
         {/* <img src="logo.png" alt="Logo" /> */}
-        <div className={style.logo_text}>TAMITI</div>
+        <div className="navbar__logo-text">TAMITI</div>
       </div>
-      <div className={`${style.menu} ${isOpen ? style.open : ''}`}>
+      <div className={`navbar__menu ${isOpen ? 'navbar__menu--active' : ''}`}>
         <ul>
           {agarCakes.map((cake: Cake) => (
             <li key={cake.id}>{t(cake.type)}</li>
           ))}
         </ul>
       </div>
-      <div className={style.language_selector}>
+      <div className="navbar__language-selector">
         <select onChange={handleLanguageChange}>
           <option value="vn">Tiếng Việt</option>
           <option value="en">English</option>
