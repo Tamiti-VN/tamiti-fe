@@ -5,7 +5,7 @@ type ProductCardProps = {
 };
 
 export const ProductCard = ({ product }: ProductCardProps) => {
-  const imgPath = `https://res.cloudinary.com/nerotien/image/upload/ar_1.0,c_fill,h_250`;
+  const imgPath = `https://res.cloudinary.com/nerotien/image/upload/ar_1.0,c_fill,h_400`;
   return (
     <div className="card" key={product._id}>
       <img src={`${imgPath}/${product.img}`} alt={product.productName} />
