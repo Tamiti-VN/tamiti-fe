@@ -1,0 +1,21 @@
+.home {
+  padding: 0 1rem;
+}
+
+.home__product-list {
+  display: grid;
+  max-width: 1600px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+
+  place-items: center;
+  margin: 5rem auto;
+}
+
+@media screen and (max-width: 860px) {
+  .home__product-list {
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
+    margin: 2rem auto;
+    gap: 1rem;
+  }
+}

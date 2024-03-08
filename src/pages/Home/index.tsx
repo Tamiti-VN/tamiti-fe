@@ -2,9 +2,10 @@ import { useEffect, useState } from 'react';
 import { TProduct } from '../../@types/product';
 import { useTitle } from '../../hooks/useTitle';
 import { ProductCard } from '../../components/ProductCard';
-import style from './style.module.css';
+import './style.css';
 
 import { getProducts } from '../../apis/product';
+import { For } from 'million/react';
 
 export function Home() {
   useTitle('Home Page');
@@ -24,11 +25,11 @@ export function Home() {
   }, []);
 
   return (
-    <div className={style.home_container}>
-      <div className={style.product_list_wrapper}>
-        {products.map((product) => (
-          <ProductCard key={product._id} product={product} />
-        ))}
+    <div className="home">
+      <div className="home__product-list">
+        <For each={products}>
+          {(product) => <ProductCard key={product._id} product={product} />}
+        </For>
       </div>
     </div>
   );

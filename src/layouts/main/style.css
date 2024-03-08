@@ -5,10 +5,10 @@
   flex-direction: column;
 }
 
-.main-layout__navbar,
+/* .main-layout__navbar,
 .main-layout__footer {
   max-height: 20vh;
-}
+} */
 
 .main-layout__carousel {
   width: 100%;

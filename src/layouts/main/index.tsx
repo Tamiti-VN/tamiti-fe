@@ -1,12 +1,12 @@
 import { Outlet } from 'react-router-dom';
-import { Navbar } from '../../components/Navbar/Navbar';
-import { Footer } from '../../components/Footer/Footer';
+import { Navbar } from '../../components/Navbar';
+import { Footer } from '../../components/Footer';
 import { Carousel } from '../../components/Carousel';
 import './style.css';
 export function MainLayout() {
   return (
     <div className="main-layout">
-      <div className="main-layout__navbar">
+      <div className="main-layout__navbar ">
         <Navbar />
       </div>
       <div className="main-layout__content">
