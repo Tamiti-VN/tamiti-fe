@@ -7,7 +7,7 @@ import { TCarousel } from '../../@types/carousel';
 export const Carousel = () => {
   const [images, setImages] = useState<TCarousel[]>([]);
 
-  const [ImageIndex, setImageIndex] = useState(0);
+  const [imageIndex, setImageIndex] = useState(0);
   const cloudinaryPath = `https://res.cloudinary.com/nerotien/image/upload`;
 
   const fetchProducts = async () => {
@@ -15,7 +15,7 @@ export const Carousel = () => {
       const imgURLs = await getCarousels();
       setImages(imgURLs);
     } catch (error) {
-      console.error('product list error:', error);
+      console.error('carousel list error:', error);
     }
   };
 
@@ -24,11 +24,13 @@ export const Carousel = () => {
   }, []);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 5000);
+    if (images && images.length > 0) {
+      const interval = setInterval(() => {
+        setImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+      }, 5000);
 
-    return () => clearInterval(interval);
+      return () => clearInterval(interval);
+    }
   }, [images]);
 
   const nextImage = () => {
@@ -48,37 +50,39 @@ export const Carousel = () => {
   };
 
   return (
-    <div className="carousel">
-      <div
-        className="carousel__slide-image-list"
-        style={{
-          transform: `translateX(-${ImageIndex * 100}%)`,
-        }}>
-        {images.map((image) => (
-          <img
-            className="carousel__slide-image"
-            key={image._id}
-            src={`${cloudinaryPath}/${image.imgPath}`}
-            alt="carousel_images"
-          />
-        ))}
-      </div>
-      <div className="carousel__track-dot-container">
-        {images.map((_, index) => (
-          <button
-            className={`carousel__track-dot 
-              ${ImageIndex === index ? 'carousel__track-dot--active' : ''}`}
-            key={index}
-            onClick={() => setImageIndex(index)}></button>
-        ))}
-      </div>
-
-      <button className="carousel__button carousel__button--left" onClick={prevImage}>
-        <FaChevronLeft className="arrow-icon" />
-      </button>
-      <button className="carousel__button carousel__button--right" onClick={nextImage}>
-        <FaChevronRight className="arrow-icon" />
-      </button>
+    <div className="carousel ">
+      {images && images.length > 0 && (
+        <>
+          <div
+            className="carousel__slide-image-list"
+            style={{ transform: `translateX(-${imageIndex * 100}%)` }}>
+            {images.map((image) => (
+              <img
+                className="carousel__slide-image"
+                key={image._id}
+                src={`${cloudinaryPath}/${image.imgPath}`}
+                alt="carousel_images"
+              />
+            ))}
+          </div>
+          <div className="carousel__track-dot-container">
+            {images.map((_, index) => (
+              <button
+                className={`carousel__track-dot ${
+                  imageIndex === index ? 'carousel__track-dot--active' : ''
+                }`}
+                key={index}
+                onClick={() => setImageIndex(index)}></button>
+            ))}
+          </div>
+          <button className="carousel__button carousel__button--left" onClick={prevImage}>
+            <FaChevronLeft className="arrow-icon" />
+          </button>
+          <button className="carousel__button carousel__button--right" onClick={nextImage}>
+            <FaChevronRight className="arrow-icon" />
+          </button>
+        </>
+      )}
     </div>
   );
 };

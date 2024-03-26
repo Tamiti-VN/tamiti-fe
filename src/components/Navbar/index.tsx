@@ -36,7 +36,7 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className="navbar">
+    <nav className="navbar container-fluid">
       <div onClick={toggleMenu} className="navbar__hamburger">
         {isOpen ? <FiX size={26} /> : <FiMenu size={26} />}
       </div>

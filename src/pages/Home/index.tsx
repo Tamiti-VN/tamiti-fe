@@ -26,10 +26,15 @@ export function Home() {
 
   return (
     <div className="home">
+      <p>Product</p>
       <div className="home__product-list">
-        <For each={products}>
-          {(product) => <ProductCard key={product._id} product={product} />}
-        </For>
+        {products ? (
+          <For each={products}>
+            {(product) => <ProductCard key={product._id} product={product} />}
+          </For>
+        ) : (
+          <h1>No Cakes !!</h1>
+        )}
       </div>
     </div>
   );

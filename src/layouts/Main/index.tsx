@@ -9,11 +9,11 @@ export function MainLayout() {
       <div className="main-layout__navbar ">
         <Navbar />
       </div>
-      <div className="main-layout__content">
-        <div className="main-layout__carousel">
+      <div className="main-layout__content ">
+        <div className="main-layout__carousel ">
           <Carousel />
         </div>
-        <div className="main-layout__outlet">
+        <div className="main-layout__outlet container-fluid">
           <Outlet />
         </div>
       </div>
