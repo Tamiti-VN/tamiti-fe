@@ -1,11 +1,11 @@
-import axios from 'axios';
+import axiosClient from './axiosInstance';
 
 export const getProducts = async () => {
-  try {
-    const response = await axios.get('http://127.0.0.1:3333/api/v1/products');
-    return response.data.data;
-  } catch (error) {
-    console.error('Failed to fetch products', error);
-    throw error;
-  }
+  const res = await axiosClient.get('/api/v1/products');
+  return res.data;
+};
+
+export const getProductDetail = async (productId: string) => {
+  const res = await axiosClient.get(`/api/v1/products/${productId}`);
+  return res.data;
 };
