@@ -34,7 +34,6 @@ export const Carousel = () => {
   }, [images]);
 
   const nextImage = () => {
-    // const newIndex = ImageIndex >= images.length - 1 ? 0 : ImageIndex + 1;
     setImageIndex((index) => {
       if (index === images.length - 1) return 0;
       return index + 1;
@@ -42,7 +41,6 @@ export const Carousel = () => {
   };
 
   const prevImage = () => {
-    // const newIndex = ImageIndex <= 0 ? images.length - 1 : ImageIndex - 1;
     setImageIndex((index) => {
       if (index === 0) return images.length - 1;
       return index - 1;
@@ -60,7 +58,7 @@ export const Carousel = () => {
               <img
                 className="carousel__slide-image"
                 key={image._id}
-                src={`${cloudinaryPath}/${image.imgPath}`}
+                src={`${cloudinaryPath}/${image.fileName}`}
                 alt="carousel_images"
               />
             ))}
