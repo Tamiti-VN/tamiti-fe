@@ -1,7 +1,7 @@
 .home {
   padding: 0 1rem;
 }
-.home p {
+.home__title {
   text-align: center;
   font-size: 34px;
   font-weight: bold;

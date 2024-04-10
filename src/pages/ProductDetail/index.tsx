@@ -28,7 +28,7 @@ function ProductDetail() {
       <div className="product__gallery">
         <div className="product__side-img"></div>
         <div className="product__main-img">
-          <img src={`${imgPath}/${product.imgPath}`} alt={product.productName} />
+          <img src={`${imgPath}/${product.productImgs}`} alt={product.productName} />
         </div>
       </div>
 

@@ -1,7 +1,7 @@
 export type TProduct = {
   _id: string;
-  imgPath: string;
+  productImgs: string;
   productName: string;
   description: string;
-  price: number;
+  // price: number;
 };

@@ -5,14 +5,20 @@ import { MainLayout } from '../layouts/Main';
 import { Login } from '../pages/Login';
 import { Admin } from '../pages/Admin';
 import { AdminLayout } from '../layouts/Admin';
+import { MainLayout2 } from '../layouts/Main/noCarousel';
 
 export const router = createBrowserRouter([
   {
     element: <MainLayout />,
     children: [{ path: '/', element: <Home /> }],
   },
-  { path: '/products/:productId', element: <ProductDetail /> },
+  {
+    element: <MainLayout2 />,
+    children: [{ path: '/products/:productId', element: <ProductDetail /> }],
+  },
+
   { path: '/auth/login', element: <Login /> },
+
   {
     element: <AdminLayout />,
     children: [{ path: '/admin', element: <Admin /> }],
