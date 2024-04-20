@@ -53,7 +53,7 @@ export const Navbar = () => {
         </ul>
       </div>
       <div className="navbar__language-selector">
-        <select onChange={handleLanguageChange}>
+        <select title="select language" onChange={handleLanguageChange}>
           <option value="vn">Tiếng Việt</option>
           <option value="en">English</option>
         </select>

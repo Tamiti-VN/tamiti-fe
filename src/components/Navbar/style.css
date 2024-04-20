@@ -23,7 +23,6 @@
 .navbar__menu {
   display: flex;
   max-width: 1200px;
-  height: fit-content;
 }
 
 .navbar__menu ul {

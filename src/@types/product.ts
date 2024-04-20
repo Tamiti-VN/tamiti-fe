@@ -1,4 +1,4 @@
-export type TProduct = {
+export type Product = {
   _id: string;
   productImgs: string;
   productName: string;

@@ -1,4 +1,4 @@
-import axiosClient from './axiosInstance';
+import { axiosClient } from './axiosInstance';
 
 export const getCarousels = async () => {
   const response = await axiosClient.get('/api/v1/carousels');

@@ -1,4 +1,4 @@
-import axiosClient from './axiosInstance';
+import { axiosClient } from './axiosInstance';
 
 export const getProducts = async () => {
   const res = await axiosClient.get('/api/v1/products');

@@ -1,11 +1,12 @@
 import { createBrowserRouter } from 'react-router-dom';
+import { MainLayout, MainLayout2 } from '../layouts/Main';
+import { AdminLayout } from '../layouts/Admin';
+import { ProtectedRoute } from './ProtectedRoutes';
+import { Dashboard } from '../pages/Admin/DashBoard';
+import { Login } from '../pages/Login';
 import { Home } from '../pages/Home';
 import { ProductDetail } from '../pages/ProductDetail';
-import { MainLayout } from '../layouts/Main';
-import { Login } from '../pages/Login';
-import { Admin } from '../pages/Admin';
-import { AdminLayout } from '../layouts/Admin';
-import { MainLayout2 } from '../layouts/Main/noCarousel';
+import { ProductList } from '../pages/Admin/Product';
 
 export const router = createBrowserRouter([
   {
@@ -16,12 +17,20 @@ export const router = createBrowserRouter([
     element: <MainLayout2 />,
     children: [{ path: '/products/:productId', element: <ProductDetail /> }],
   },
-
-  { path: '/auth/login', element: <Login /> },
-
+  { path: '/admin/login', element: <Login /> },
   {
-    element: <AdminLayout />,
-    children: [{ path: '/admin', element: <Admin /> }],
+    path: '/admin',
+    element: (
+      <ProtectedRoute>
+        <AdminLayout />
+      </ProtectedRoute>
+    ),
+    children: [
+      { path: '/admin/dashboards', element: <Dashboard /> },
+      { path: '/admin/products', element: <ProductList /> },
+      { path: '/admin/new-feeds', element: <h1>Coming soon</h1> },
+      { path: '/admin/settings', element: <h1>Coming soon</h1> },
+    ],
   },
   // Add more routes as needed
 ]);
