@@ -1,34 +1,21 @@
-.product__action-bar {
-  width: 100%;
-  background-color: wheat;
-  padding: 5px;
-  border-radius: 50px;
-  margin-bottom: 10px;
+.product__header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  & button {
+    height: 50px;
+    width: 120px;
+    border-radius: 5px;
+    background-color: black;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+  }
 }
-.action-bar__btn {
-  width: 26px;
-  height: 26px;
-}
-.action-bar__btn button {
-  cursor: pointer;
-  width: 26px;
-  height: 26px;
-  background-color: #04aa6d;
-  color: white;
-  border-radius: 50%;
-}
-.action-bar__wrapper {
-  display: flex;
-  justify-content: end;
-  gap: 5px;
-}
-.action-bar__wrapper > * {
-  padding: 5px;
-  border-radius: 50px;
-}
+
 .product__table {
   text-align: center;
   width: 100%;

@@ -7,8 +7,3 @@ export type User = {
   phone?: number;
   address?: string;
 };
-
-export type AuthState = {
-  currentUser: User | null;
-  isAuth: boolean;
-};

@@ -1,12 +1,10 @@
 import { useSelector } from 'react-redux';
-import { Navigate } from 'react-router-dom';
-import { AuthState } from '../@types/user';
-type ProtectedRouteProps = {
-  children: React.ReactNode;
-};
+import { Navigate, useLocation } from 'react-router-dom';
 
-export const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
-  const isAuth = useSelector((state: { auth: AuthState }) => state.auth.isAuth);
+import { RootState } from '../redux/store';
 
-  return isAuth ? children : <Navigate to="/auth/login" />;
+export const ProtectedRoute = ({ children }: React.PropsWithChildren) => {
+  const isAuth = useSelector((state: RootState) => state.auth.isAuth);
+  const location = useLocation();
+  return isAuth ? children : <Navigate to="/admin/login" state={{ from: location }} replace />;
 };

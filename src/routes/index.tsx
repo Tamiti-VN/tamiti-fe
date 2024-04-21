@@ -6,7 +6,9 @@ import { Dashboard } from '../pages/Admin/DashBoard';
 import { Login } from '../pages/Login';
 import { Home } from '../pages/Home';
 import { ProductDetail } from '../pages/ProductDetail';
-import { ProductList } from '../pages/Admin/Product';
+import { ProductList } from '../pages/Admin/Product/View';
+import { Create } from '../pages/Admin/Product/Create';
+import { Update } from '../pages/Admin/Product/Update';
 
 export const router = createBrowserRouter([
   {
@@ -15,7 +17,7 @@ export const router = createBrowserRouter([
   },
   {
     element: <MainLayout2 />,
-    children: [{ path: '/products/:productId', element: <ProductDetail /> }],
+    children: [{ path: '/products/:id', element: <ProductDetail /> }],
   },
   { path: '/admin/login', element: <Login /> },
   {
@@ -26,10 +28,17 @@ export const router = createBrowserRouter([
       </ProtectedRoute>
     ),
     children: [
-      { path: '/admin/dashboards', element: <Dashboard /> },
-      { path: '/admin/products', element: <ProductList /> },
-      { path: '/admin/new-feeds', element: <h1>Coming soon</h1> },
-      { path: '/admin/settings', element: <h1>Coming soon</h1> },
+      { path: 'dashboards', element: <Dashboard /> },
+      {
+        path: 'products',
+        children: [
+          { path: '', element: <ProductList /> },
+          { path: 'new', element: <Create /> },
+          { path: ':id', element: <Update /> },
+        ],
+      },
+      { path: 'new-feeds', element: <h1>Coming soon</h1> },
+      { path: 'settings', element: <h1>Coming soon</h1> },
     ],
   },
   // Add more routes as needed

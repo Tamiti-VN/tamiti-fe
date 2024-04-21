@@ -1,6 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 // import { updateUserThunk } from './authThunk';
-import { AuthState } from '../../@types/user';
+import { User } from '../../@types/user';
+
+type AuthState = {
+  currentUser: User | null;
+  isAuth: boolean;
+};
 
 const initialState: AuthState = {
   currentUser: null,
