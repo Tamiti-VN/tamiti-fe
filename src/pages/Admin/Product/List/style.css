@@ -6,12 +6,13 @@
     height: 50px;
     width: 120px;
     border-radius: 5px;
-    background-color: black;
+    background-color: var(--pink);
     cursor: pointer;
+    border: none;
     color: white;
     font-weight: bold;
     &:hover {
-      background-color: rgba(0, 0, 0, 0.8);
+      background-color: pink;
     }
   }
 }
@@ -25,15 +26,12 @@
   font-weight: bolder;
   font-size: large;
 }
-.product__table thead tr {
-  background-color: #04aa6d;
-}
 
 .product__table th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: center;
-  background-color: #04aa6d;
+  background-color: var(--pink);
   color: white;
 }
 .product__table tr:nth-child(even) {

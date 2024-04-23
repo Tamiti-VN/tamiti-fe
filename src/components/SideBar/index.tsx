@@ -27,7 +27,7 @@ export const SideBar = () => {
         {sideBarData.map((data, index) => (
           <Link
             to={data.path}
-            className={location.pathname === data.path ? 'active' : ''}
+            className={location.pathname.includes(data.path) ? 'active' : ''}
             key={index}>
             {data.name}
           </Link>

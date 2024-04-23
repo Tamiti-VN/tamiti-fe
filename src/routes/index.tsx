@@ -6,9 +6,8 @@ import { Dashboard } from '../pages/Admin/DashBoard';
 import { Login } from '../pages/Login';
 import { Home } from '../pages/Home';
 import { ProductDetail } from '../pages/ProductDetail';
-import { ProductList } from '../pages/Admin/Product/View';
-import { Create } from '../pages/Admin/Product/Create';
-import { Update } from '../pages/Admin/Product/Update';
+
+import { Create, Update, ProductList } from '../pages/Admin/Product';
 
 export const router = createBrowserRouter([
   {
