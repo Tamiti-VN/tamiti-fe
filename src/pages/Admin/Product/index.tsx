@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getProducts } from "../../../apis/product";
 import { TProduct } from "../../../@types/product";
-import "./style.css";
+
 export function ProductList() {
   const [products, setProducts] = useState<TProduct[]>([]);
   useEffect(() => {
