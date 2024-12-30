@@ -1,14 +1,11 @@
-import { useEffect, useState } from 'react';
-import { TProduct } from '../../@types/product';
-import { useTitle } from '../../hooks/useTitle';
-import { ProductCard } from '../../components/ProductCard';
-import './style.css';
-
-import { getProducts } from '../../apis/product';
-import { For } from 'million/react';
-
+import { useEffect, useState } from "react";
+import { TProduct } from "../../share/@types/product";
+import { useTitle } from "../../share/hooks/useTitle";
+import { ProductCard } from "../../features/Product/ProductCard";
+import "./style.css";
+import { getProducts } from "../../old/apis/product";
 export function Home() {
-  useTitle('Home Page');
+  useTitle("Home Page");
 
   const [products, setProducts] = useState<TProduct[]>([]);
 
@@ -18,7 +15,7 @@ export function Home() {
         const data = await getProducts();
         setProducts(data);
       } catch (error) {
-        console.error('product list error:', error);
+        console.error("product list error:", error);
       }
     };
     fetchProducts();
@@ -29,9 +26,9 @@ export function Home() {
       <p>Product</p>
       <div className="home__product-list">
         {products ? (
-          <For each={products}>
-            {(product) => <ProductCard key={product._id} product={product} />}
-          </For>
+          products.map((product) => (
+            <ProductCard key={product._id} product={product} />
+          ))
         ) : (
           <h1>No Cakes !!</h1>
         )}

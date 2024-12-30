@@ -1,8 +1,8 @@
 import { useParams } from "react-router";
 import "./style.css";
 import { useEffect, useState } from "react";
-import { getProductDetail } from "../../apis/product";
-import { TProduct } from "../../@types/product";
+import { getProductDetail } from "../../old/apis/product";
+import { TProduct } from "../../share/@types/product";
 
 function ProductDetail() {
   const params = useParams();

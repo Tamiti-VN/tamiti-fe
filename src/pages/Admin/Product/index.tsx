@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { getProducts } from "../../../apis/product";
-import { TProduct } from "../../../@types/product";
+import { getProducts } from "../../../old/apis/product";
+import { TProduct } from "../../../share/@types/product";
 
 export function ProductList() {
   const [products, setProducts] = useState<TProduct[]>([]);

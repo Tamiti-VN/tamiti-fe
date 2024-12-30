@@ -5,12 +5,12 @@ import { Button } from "../../../components/Button";
 import { toast } from "react-toastify";
 
 import { useDispatch } from "react-redux";
-import { createUser, updateUser } from "../../../apis/admin";
+import { createUser, updateUser } from "../../../old/apis/admin";
 import {
   UpdatedListSuccess,
   UpdatedUserSuccess,
-} from "../../../redux/user/UserSlice";
-import { User } from "../../../@types/user";
+} from "../../../app/user/UserSlice";
+import { User } from "../../../share/@types/user";
 type TProps = {
   onClose: (e?: React.MouseEvent<HTMLElement, MouseEvent>) => void;
   userData?: User;

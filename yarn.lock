@@ -1361,6 +1361,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"czg@npm:^1.11.0":
+  version: 1.11.0
+  resolution: "czg@npm:1.11.0"
+  bin:
+    czg: bin/index.js
+    git-czg: bin/index.js
+  checksum: 10c0/2094240ff5d210e92ce3b602b6ef52f5020b1b512f185625e6d5b0008067a93c0b6f931230a54ff78b31de9078229a1509fbcb7f6cab7f4dde463b7e620d9391
+  languageName: node
+  linkType: hard
+
 "debug@npm:4, debug@npm:^4.1.0, debug@npm:^4.3.1, debug@npm:^4.3.2, debug@npm:^4.3.4":
   version: 4.4.0
   resolution: "debug@npm:4.4.0"
@@ -3042,6 +3052,7 @@ __metadata:
     "@types/react-dom": "npm:^18.3.5"
     "@vitejs/plugin-react-swc": "npm:^3.7.2"
     axios: "npm:^1.7.9"
+    czg: "npm:^1.11.0"
     eslint: "npm:^9.17.0"
     eslint-plugin-react-hooks: "npm:^5.1.0"
     eslint-plugin-react-refresh: "npm:^0.4.16"
