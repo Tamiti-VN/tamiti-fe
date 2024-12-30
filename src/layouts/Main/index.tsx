@@ -1,8 +1,8 @@
-import { Outlet } from 'react-router-dom';
-import { Navbar } from '../../components/Navbar';
-import { Footer } from '../../components/Footer';
-import { Carousel } from '../../components/Carousel';
-import './style.css';
+import { Outlet } from "react-router";
+import { Navbar } from "../../components/Navbar";
+import { Footer } from "../../components/Footer";
+import { Carousel } from "../../components/Carousel";
+import "./style.css";
 export function MainLayout() {
   return (
     <div className="main-layout">

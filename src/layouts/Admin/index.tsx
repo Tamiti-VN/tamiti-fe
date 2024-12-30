@@ -1,8 +1,8 @@
-import { Outlet } from 'react-router-dom';
-import { Footer } from '../../components/Footer';
+import { Outlet } from "react-router";
+import { Footer } from "../../components/Footer";
 
-import './style.css';
-import { SideBar } from '../../components/SideBar';
+import "./style.css";
+import { SideBar } from "../../components/SideBar";
 export function AdminLayout() {
   return (
     <div className="admin-layout">

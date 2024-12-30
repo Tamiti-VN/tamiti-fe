@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter } from "react-router";
 import { MainLayout, MainLayout2 } from "../layouts/Main";
 import { AdminLayout } from "../layouts/Admin";
 import { ProtectedRoute } from "./ProtectedRoutes";

@@ -1,8 +1,8 @@
-import { useParams } from 'react-router-dom';
-import './style.css';
-import { useEffect, useState } from 'react';
-import { getProductDetail } from '../../apis/product';
-import { TProduct } from '../../@types/product';
+import { useParams } from "react-router";
+import "./style.css";
+import { useEffect, useState } from "react";
+import { getProductDetail } from "../../apis/product";
+import { TProduct } from "../../@types/product";
 
 function ProductDetail() {
   const params = useParams();
@@ -17,7 +17,7 @@ function ProductDetail() {
 
         setProduct(productData);
       } catch (error) {
-        console.error('get product detail error:', error);
+        console.error("get product detail error:", error);
       }
     };
     getProduct();
@@ -28,7 +28,10 @@ function ProductDetail() {
       <div className="product__gallery">
         <div className="product__side-img"></div>
         <div className="product__main-img">
-          <img src={`${imgPath}/${product.productImgs}`} alt={product.productName} />
+          <img
+            src={`${imgPath}/${product.productImgs}`}
+            alt={product.productName}
+          />
         </div>
       </div>
 

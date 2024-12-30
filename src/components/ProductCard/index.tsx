@@ -1,6 +1,6 @@
 import "./style.css";
 import { TProduct } from "../../@types/product";
-import { redirect } from "react-router-dom";
+import { redirect } from "react-router";
 type ProductCardProps = {
   product: TProduct;
 };

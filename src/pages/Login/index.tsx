@@ -1,13 +1,13 @@
-import { useState } from 'react';
-import './style.css';
-import { login } from '../../apis/user';
-import { toast } from 'react-toastify';
-import { loginSuccess } from '../../redux/auth/AuthSlice';
-import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useState } from "react";
+import "./style.css";
+import { login } from "../../apis/user";
+import { toast } from "react-toastify";
+import { loginSuccess } from "../../redux/auth/AuthSlice";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router";
 export const Login = () => {
-  const [email, setUserName] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setUserName] = useState("");
+  const [password, setPassword] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -15,10 +15,10 @@ export const Login = () => {
     e.preventDefault();
 
     const data = { email: email, password: password };
-    if (!email || !password) toast.error('Please input Email/Password!!');
+    if (!email || !password) toast.error("Please input Email/Password!!");
     await login(data)
       .then((data) => dispatch(loginSuccess(data)))
-      .then(() => navigate('/admin'))
+      .then(() => navigate("/admin"))
       .catch((err) => console.log(err));
   };
 

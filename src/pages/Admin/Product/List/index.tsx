@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react';
-import { getProducts } from '../../../../apis/product';
-import { TProduct } from '../../../../@types/product';
-import './style.css';
-import { useNavigate } from 'react-router-dom';
+import { useEffect, useState } from "react";
+import { getProducts } from "../../../../apis/product";
+import { TProduct } from "../../../../@types/product";
+import "./style.css";
+import { useNavigate } from "react-router";
 export function ProductList() {
   const [products, setProducts] = useState<TProduct[]>([]);
   const navigate = useNavigate();
@@ -14,7 +14,7 @@ export function ProductList() {
     <div className="product">
       <div className="product__header">
         <h1>Products</h1>
-        <button onClick={() => navigate('/admin/products/new')}>Create</button>
+        <button onClick={() => navigate("/admin/products/new")}>Create</button>
       </div>
       <table className="product__table">
         <thead>
