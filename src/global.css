@@ -38,35 +38,38 @@ body {
   }
   
 } */
+
 @layer base {
   :root {
-    font-family: "Sriracha", cursive;
-    --background: hsl(340, 100%, 98%);
+    font-family: Sriracha;
+    --primary: #ee4f9b; /* Màu hồng */
+    --primary-foreground: hsl(331, 100%, 95%);
+    --primary-hover: hsl(331, 72%, 52%);
+    --secondary: hsl(98, 82%, 62%); /* Màu xanh lá */
+    --secondary-foreground: hsl(98, 100%, 95%);
+    --secondary-hover: hsl(98, 72%, 52%);
+    --accent: hsl(210, 82%, 62%); /* Màu xanh dương */
+    --accent-foreground: hsl(210, 100%, 95%);
+    --accent-hover: hsl(210, 72%, 52%);
+    --background: hsl(342, 100%, 98%);
     --foreground: hsl(340, 20%, 10%);
     --card: hsl(340, 100%, 100%);
     --card-foreground: hsl(340, 20%, 10%);
     --popover: hsl(340, 100%, 100%);
     --popover-foreground: hsl(340, 20%, 10%);
-    --primary: hsl(331, 82%, 62%);
-    --primary-foreground: hsl(340, 100%, 95%);
-    --primary-hover: hsl(120, 100%, 20%);
-    --secondary: hsl(340, 50%, 95%);
-    --secondary-foreground: hsl(340, 50%, 30%);
     --muted: hsl(340, 50%, 95%);
     --muted-foreground: hsl(340, 30%, 50%);
-    --accent: hsl(340, 50%, 95%);
-    --accent-foreground: hsl(340, 50%, 30%);
     --destructive: hsl(0, 84%, 60%);
     --destructive-foreground: hsl(0, 0%, 98%);
     --border: hsl(340, 30%, 90%);
     --input: hsl(340, 30%, 90%);
     --ring: hsl(340, 100%, 70%);
     --radius: 0.5rem;
-    --chart-1: hsl(340, 100%, 70%);
-    --chart-2: hsl(340, 80%, 60%);
-    --chart-3: hsl(340, 60%, 50%);
-    --chart-4: hsl(340, 40%, 40%);
-    --chart-5: hsl(340, 20%, 30%);
+    --chart-1: hsl(331, 82%, 70%);
+    --chart-2: hsl(331, 72%, 60%);
+    --chart-3: hsl(331, 62%, 50%);
+    --chart-4: hsl(331, 52%, 40%);
+    --chart-5: hsl(331, 42%, 30%);
     --sidebar-background: hsl(340, 100%, 98%);
     --sidebar-foreground: hsl(340, 20%, 30%);
     --sidebar-primary: hsl(340, 50%, 20%);

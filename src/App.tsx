@@ -1,12 +1,24 @@
 import { Route, Routes } from "react-router";
 import { MainLayout } from "./layouts/MainLayout";
 import { AdminLayout } from "./layouts/AdminLayout";
+import { lazy } from "react";
 
-import { Home } from "./pages/Home";
-import { Login } from "./pages/Login";
-import { ProductDetail } from "./pages/ProductDetail";
-
-import { Dashboard } from "./pages/Admin/Dashboard";
+const Home = lazy(() =>
+  import("./pages/Home").then((module) => ({ default: module.Home }))
+);
+const ProductDetail = lazy(() =>
+  import("./pages/ProductDetail").then((module) => ({
+    default: module.ProductDetail,
+  }))
+);
+const Login = lazy(() =>
+  import("./pages/Login").then((module) => ({ default: module.Login }))
+);
+const Dashboard = lazy(() =>
+  import("./pages/Admin/Dashboard").then((module) => ({
+    default: module.Dashboard,
+  }))
+);
 
 function App() {
   return (

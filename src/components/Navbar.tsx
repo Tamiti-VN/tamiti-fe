@@ -1,5 +1,6 @@
 import { Link } from "react-router";
-import { ShoppingCart, User } from "lucide-react";
+import { List, ShoppingCart, User } from "lucide-react";
+import { useState } from "react";
 
 const navItems = [
   { id: 1, name: "Home", path: "/" },
@@ -14,16 +15,26 @@ const navItems = [
 ];
 
 export const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
   return (
-    <nav className="flex flex-row justify-between items-center p-4">
+    <nav className="relative flex flex-row justify-between items-center p-4 gap-6">
+      {/* Menu Button for Small Screens */}
+      <div className="lg:hidden flex items-center">
+        <button onClick={toggleMenu} className="text-[var(--primary)]">
+          <List className="size-6" />
+        </button>
+      </div>
       {/* Logo */}
       <div className="text-2xl font-bold">TAMITI</div>
       {/* navItemList */}
-      <div className="flex flex-row flex-wrap justify-center text-xl">
+      <div className="max-lg:hidden flex flex-row flex-wrap justify-center text-xl max-w-screen-xl">
         {navItems.map((navItem) => (
           <div
             key={navItem.id}
-            className="px-4 py-2 text-[var(--primary)] hover:text-[var(--primary-hover)]"
+            className="p-4 text-[var(--primary)] hover:text-[var(--primary-hover)]"
           >
             <Link to={navItem.path}>{navItem.name}</Link>
           </div>
@@ -38,6 +49,23 @@ export const Navbar = () => {
           <ShoppingCart />
         </Link>
       </div>
+      {/* Dropdown Menu for Small Screens */}
+      {isMenuOpen && (
+        <div className="lg:hidden fixed inset-0 top-16 bg-white  z-50">
+          {navItems.map((navItem) => (
+            <div key={navItem.id} className="p-4">
+              <Link
+                className="text-[var(--primary)] "
+                to={navItem.path}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {navItem.name}
+              </Link>
+              <hr className="border-[var(--border)]" />
+            </div>
+          ))}
+        </div>
+      )}
     </nav>
   );
 };

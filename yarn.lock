@@ -684,6 +684,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@radix-ui/react-aspect-ratio@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "@radix-ui/react-aspect-ratio@npm:1.1.1"
+  dependencies:
+    "@radix-ui/react-primitive": "npm:2.0.1"
+  peerDependencies:
+    "@types/react": "*"
+    "@types/react-dom": "*"
+    react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+    react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+    "@types/react-dom":
+      optional: true
+  checksum: 10c0/e99ceebb32a743fd99bdae54480213de20580a194ebdf1ca5ca2046cecc964dec8f05d29cad00740f97a790bfa05d2374dd34e6abecbb98fd5cc90937407a25f
+  languageName: node
+  linkType: hard
+
 "@radix-ui/react-avatar@npm:^1.1.2":
   version: 1.1.2
   resolution: "@radix-ui/react-avatar@npm:1.1.2"
@@ -4282,6 +4301,7 @@ __metadata:
   dependencies:
     "@eslint/js": "npm:^9.17.0"
     "@hookform/resolvers": "npm:^3.9.1"
+    "@radix-ui/react-aspect-ratio": "npm:^1.1.1"
     "@radix-ui/react-avatar": "npm:^1.1.2"
     "@radix-ui/react-collapsible": "npm:^1.1.2"
     "@radix-ui/react-dialog": "npm:^1.1.4"

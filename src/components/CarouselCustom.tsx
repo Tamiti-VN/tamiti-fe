@@ -36,24 +36,21 @@ export const CarouselCustom = () => {
     <Carousel
       setApi={setApi}
       plugins={[plugin.current]}
-      className="relative group"
+      className="relative group overflow-hidden"
     >
       <CarouselContent>
         {bannerImages.map((banner, index) => (
-          <CarouselItem
-            key={index}
-            className="relative content-center h-[35vh]"
-          >
+          <CarouselItem key={index} className="relative content-center h-80">
             <img
-              className="object-cover object-center"
+              className="w-full object-cover object-center"
               src={banner.image}
               alt={`Banner ${index + 1}`}
             />
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-10 group-hover:translate-x-1 p-2 bg-white text-gray-800 rounded-full transition-transform duration-300 ease-in-out" />
-      <CarouselNext className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-10 group-hover:-translate-x-1 p-2 bg-white text-gray-800 rounded-full transition-transform duration-300 ease-in-out" />
+      <CarouselPrevious className="absolute left-0 transform -translate-y-1/2 -translate-x-10 group-hover:translate-x-1 p-2 bg-white text-gray-800 rounded-full transition-transform duration-300 ease-in-out" />
+      <CarouselNext className="absolute right-0 transform -translate-y-1/2 translate-x-10 group-hover:-translate-x-1 p-2 bg-white text-gray-800 rounded-full transition-transform duration-300 ease-in-out" />
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
         {Array.from({ length: count }).map((_, index) => (
           <span
